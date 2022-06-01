@@ -12,6 +12,8 @@ refs.input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(event) {
   if (!event.target.value.trim()) {
+    API.clearCountriesListMarkup();
+    API.clearCountryCardMarkup();
     return;
   }
 
