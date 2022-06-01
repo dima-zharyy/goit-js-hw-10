@@ -1,7 +1,8 @@
+import 'modern-normalize';
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './js/fetchCountries';
-import { getRefs } from './js/getRefs';
+import { getRefs } from './js/get-refs';
 import * as API from './js/additional-api';
 
 const DEBOUNCE_DELAY = 300;

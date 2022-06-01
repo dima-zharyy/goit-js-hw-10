@@ -1,5 +1,5 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { getRefs } from './getRefs';
+import { getRefs } from './get-refs';
 
 const refs = getRefs();
 
@@ -20,7 +20,7 @@ const createCardMarkup = data => {
 
   return `
   <div class="country-info__wrap">
-    <img src="${flags.svg}" width="20px" height="20px" />
+    <img src="${flags.svg}">
     <p class="country-info__name">${name.official}</p>
   </div>
     <ul class="country-info__list">
@@ -28,7 +28,9 @@ const createCardMarkup = data => {
         <p class="country-info__content"><b>Capital: </b>${capital}</p>
       </li>
       <li class="country-info__item">
-        <p class="country-info__content"><b>Population: </b>${population}</p>
+        <p class="country-info__content"><b>Population: </b>${new Intl.NumberFormat().format(
+          population
+        )}</p>
       </li>
       <li class="country-info__item">
         <p class="country-info__content"><b>Languages: </b>${Object.values(
@@ -44,7 +46,7 @@ const createCountriesListMarkup = data => {
     .map(({ name, flags }) => {
       return `
 <li class="country-list__item">
-  <img src="${flags.svg}" width="20px" height="20px">
+  <img src="${flags.svg}">
   <p class="country-list__name">${name.official}</p>
 </li>
     `;
