@@ -64,8 +64,8 @@ img {
   font-weight: bold;
 }
 
-.country-info__list {
-}
+/* .country-info__list {
+} */
 
 .country-info__item:not(:last-child) {
   margin-bottom: 15px;
